@@ -1,0 +1,3 @@
+test_script = "'"
+
+python base.py sample.log error
