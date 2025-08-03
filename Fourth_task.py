@@ -1,7 +1,7 @@
 def input_error(func):
     def inner(*args, **kwargs):
         try:
-            return func(*args, *kwargs)
+            return func(*args, **kwargs)
         except KeyError:
             return "Contact not found"
         except ValueError:
@@ -22,7 +22,7 @@ def show_phone(args, contacts):
         raise IndexError
     name = args[0]
     if name not in contacts:
-        raise KeyErrorreturn f"{name}: {contacts[name]}"
+        raise KeyError
     return f"{name}: {contacts[name]}"
 
 @input_error
@@ -36,7 +36,7 @@ def parse_input(user_input):
     return cmd.lower(), args
 
 def main():
-    contact = {}
+    contacts = {}
     while True:
         user_input = input("Enter a command: ").strip()
         if not user_input:
