@@ -18,11 +18,7 @@ def add_contact(args, contacts):
 
 @input_error
 def show_phone(args, contacts):
-    if len(args)<1:
-        raise IndexError
     name = args[0]
-    if name not in contacts:
-        raise KeyError
     return f"{name}: {contacts[name]}"
 
 @input_error
