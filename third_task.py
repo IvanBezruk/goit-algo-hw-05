@@ -47,7 +47,7 @@ def display_log_counts(counts: dict) -> None:
     print("Рівень логування|Кількість")
     print("----------------|-----------")
     for level in ["INFO", "DEBUG", "ERROR", "WARNING"]:
-        print(f"{level < 16} | {counts.get(level, 0)}")
+        print(f"{level:<16} | {counts.get(level, 0)}")
 
 def display_filtered_logs(logs: list, level: str) -> None:
     if not logs:
